@@ -1,3 +1,4 @@
+import { convertArgs } from '../utils/args.utils';
 import "./video-preview";
 
 export default {
@@ -9,19 +10,8 @@ export default {
     },
     argTypes: {
       previewing: { control: 'boolean' },
-      size: {
-        control: { type: 'select' },
-        options: ['small', 'medium', 'large'],
-      },
     },
   };
-
-const convertArgs = (args) => Object.keys(args).map(e => {
-  if (typeof args[e] === 'function') {
-    return;
-  }
-  return `${e}="${args[e]}"`;
-}).toString().replace(',', ' ');
 
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 const Template = (args) => `
@@ -31,13 +21,12 @@ const Template = (args) => `
   </video>
 `;
 
-export const Default = Template.bind({});
-Default.args = {
+export const previewingActive = Template.bind({});
+previewingActive.args = {
   previewing: true,
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  previewing: true,
-  size: 'small'
+export const previewingInactive = Template.bind({});
+previewingInactive.args = {
+  previewing: false,
 };

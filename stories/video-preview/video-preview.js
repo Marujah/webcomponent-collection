@@ -12,7 +12,7 @@ customElements.define("thumbnail-preview", class extends HTMLVideoElement {
     this.pause();
   }
 
-  #handleClick = () => this.dispatchEvent(new CustomEvent('onClick', {bubbles: true, detail: {name: 'Marouen'}}));
+  #handleClick = () => this.dispatchEvent(new CustomEvent('onClick', {bubbles: true, composed: true, detail: {name: 'Marouen'}}));
 
   get previewing () {
     return !this.paused;
@@ -44,7 +44,7 @@ customElements.define("thumbnail-preview", class extends HTMLVideoElement {
 
   attributeChangedCallback (name, oldValue, newValue) {
     if (name === "previewing") {
-      if (newValue) {
+      if (newValue === 'true') {
         this.#startPreview();
       } else {
         this.#stopPreview();
