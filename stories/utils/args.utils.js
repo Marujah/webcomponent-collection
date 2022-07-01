@@ -3,4 +3,4 @@ export const convertArgs = (args) => Object.keys(args).map(e => {
       return;
     }
     return `${e}="${args[e]}" `;
-  }).toString().replace(/\s*,\s*/gi, ' ');
+  }).toString().replace(/\s*,\s*/gi, ' ').replace('#', '%23');

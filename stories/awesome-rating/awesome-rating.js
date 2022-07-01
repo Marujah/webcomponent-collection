@@ -32,6 +32,33 @@ customElements.define("awesome-rating", class extends HTMLElement {
         super();
     }
 
+    get style() {
+      return `
+        <style>
+            meter::-webkit-meter-bar {
+                background: transparent;
+                height: 2em;
+                border: none;
+                border-radius: 0;
+            }
+            meter {
+                width: 10em;
+                height: 2em;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">\
+                <text font-size="100" fill="${this.color}" y=".8em" opacity="0.3">★</text>\
+                </svg>') 0px center / auto 100%;
+            }
+            meter::-webkit-meter-optimum-value {
+                width: 10em;
+                height: 2em;
+                background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">\
+                <text font-size="100" fill="${this.color}" y=".8em" >★</text>\
+                </svg>')  0px center / auto 100%;
+            }
+        </style>
+      `;
+    }
+
     get template() {
         return `<meter min="${this.min}" max="${this.max}" value="${this.value}"></meter>`;
     } 
@@ -61,8 +88,8 @@ customElements.define("awesome-rating", class extends HTMLElement {
   
     get value () {
       const value = Number(this.getAttribute("value"));
-      if (value <= 0 || Number.isNaN(value) || !Number.isFinite(value)) {
-        return 2; // default
+      if (value < 0 || Number.isNaN(value) || !Number.isFinite(value)) {
+        return 0; // default
       }
       return value;
     }
@@ -70,8 +97,16 @@ customElements.define("awesome-rating", class extends HTMLElement {
         this.setAttribute("value", newValue);
     }
 
+    get color () {
+      return this.getAttribute("color");
+    }
+    set color (newColor) {
+        this.setAttribute("color", newColor);
+    }
+
+
     #createCode () {
-      this.#shadow.innerHTML = `${style} ${this.template}`;
+      this.#shadow.innerHTML = `${this.style} ${this.template}`;
     }
   
     connectedCallback () {
@@ -79,11 +114,11 @@ customElements.define("awesome-rating", class extends HTMLElement {
     }
   
     static get observedAttributes () {
-      return ["min", "max", "value"];
+      return ["min", "max", "value", "color"];
     }
   
     attributeChangedCallback (name) {
-      if (name === "min" || name === "max" || name === "value") {
+      if (name === "min" || name === "max" || name === "value" || name === "color") {
         this.#createCode();
       }
     }
