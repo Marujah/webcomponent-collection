@@ -2,7 +2,7 @@ import { convertArgs } from '../utils/args.utils';
 import "./video-preview";
 
 export default {
-    Title: "MacButton",
+    title: "Webcomponents/VideoPreview",
     parameters: {
       actions: {
         handles: ['onClick'],

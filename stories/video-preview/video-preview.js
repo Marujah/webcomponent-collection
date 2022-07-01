@@ -35,7 +35,7 @@ customElements.define("thumbnail-preview", class extends HTMLVideoElement {
   #removeEvents () {
     this.removeEventListener("mouseover", this.#startPreview);
     this.removeEventListener("mouseout", this.#stopPreview);
-    this.removeEventListener("click", this.getAttribute('onClick'));
+    this.removeEventListener("click", this.#handleClick);
   }
 
   static get observedAttributes () {

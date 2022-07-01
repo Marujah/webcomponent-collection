@@ -2,7 +2,7 @@ import { convertArgs } from '../utils/args.utils';
 import "./qr-code";
 
 export default {
-    Title: "QrCode",
+    title: "Webcomponents/QrCode",
     argTypes: {
       width: Number,
       height: Number,
