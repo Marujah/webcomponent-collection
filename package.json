@@ -25,6 +25,7 @@
   "homepage": "https://github.com/Marujah/webcomponent-collection#readme",
   "devDependencies": {
     "@babel/core": "^7.18.6",
+    "@mdx-js/react": "^2.1.2",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addon-interactions": "^6.5.9",
@@ -32,6 +33,7 @@
     "@storybook/builder-webpack4": "^6.5.9",
     "@storybook/html": "^6.1.21",
     "@storybook/manager-webpack4": "^6.5.9",
+    "@storybook/mdx2-csf": "^0.0.3",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.2.5"
   }
