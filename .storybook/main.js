@@ -8,5 +8,8 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions"
   ],
-  "framework": "@storybook/html"
+  "framework": "@storybook/html",
+  "features": {
+    "previewMdx2": true,
+  },
 }
