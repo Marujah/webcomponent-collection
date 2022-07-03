@@ -3,17 +3,24 @@ import "./m2-toggle";
 
 export default {
     title: "Webcomponents/M2-Toggle",
-    // parameters: {
-    //   actions: {
-    //     handles: ['onClick'],
-    //   },
-    // },
+    parameters: {
+      actions: {
+        handles: ['onToggleClick'],
+      },
+    },
     argTypes: {
-    //   min: Number,
-    //   max: Number,
-    //   size: Number,
-    //   value: Number,
-    //   color: String,
+      leftColor: String,
+      rightColor: String,
+      size: {
+        control: {
+          type: 'select', // Type 'select' is automatically inferred when 'options' is defined
+          options: {
+            small: 'small',
+            medium: 'medium',
+            large: 'large',
+          },
+        }, 
+      },
     }
   };
 
@@ -21,18 +28,21 @@ const Template = (args) => `<m2-toggle ${convertArgs(args)}></m2-toggle>`;
 
 export const Default = Template.bind({});
 Default.args = {
-//   color: '#3774cf',
-//   min: 0,
-//   max: 5,
-//   size: 2,
-//   value: 3,
+  leftColor: 'orange',
+  rightColor: 'red',
+  size: "medium"
 };
 
-export const Orange = Template.bind({});
-Orange.args = {
-//   color: 'orange',
-//   min: 0,
-//   max: 6,
-//   size: 3,
-//   value: 3.5,
+export const Small = Template.bind({});
+Small.args = {
+  leftColor: '#3774cf',
+  rightColor: 'red',
+  size: "small"
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  leftColor: 'orange',
+  rightColor: 'red',
+  size: "large"
 };

@@ -5,7 +5,7 @@ export default {
     title: "Webcomponents/AwesomeRating",
     parameters: {
       actions: {
-        handles: ['onClick'],
+        handles: ['onRatingclick'],
       },
     },
     argTypes: {
@@ -17,7 +17,7 @@ export default {
     }
   };
 
-const Template = (args) => `<awesome-rating ${convertArgs(args)}></qr-code>`;
+const Template = (args) => `<awesome-rating ${convertArgs(args)}></awesome-rating>`;
 
 export const Default = Template.bind({});
 Default.args = {

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./stories/awesome-rating/awesome-rating.js"></script>
+</head>
+<body>
+    <div>
+        <awesome-rating min="0" max="5" value="3" color="#ff00ff" size="2"></awesome-rating>
+    </div>
+    <div>
+        <awesome-rating min="0" max="6" value="3" color="red" size="2"></awesome-rating>
+    </div>
+    <div>
+        <awesome-rating min="0" max="8" value="3" color="green" size="2"></awesome-rating>
+    </div>
+    <script>
+        document.addEventListener('onRatingclick', (e) => e.target.setAttribute('value', e.detail.ratingNumber))
+    </script>
+</body>
+</html>
