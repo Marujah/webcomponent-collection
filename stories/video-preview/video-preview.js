@@ -12,8 +12,6 @@ customElements.define("thumbnail-preview", class extends HTMLVideoElement {
     this.pause();
   }
 
-  #handleClick = () => this.dispatchEvent(new CustomEvent('onClick', {bubbles: true, composed: true, detail: {name: 'Marouen'}}));
-
   get previewing () {
     return !this.paused;
   }
@@ -29,13 +27,11 @@ customElements.define("thumbnail-preview", class extends HTMLVideoElement {
   #addEvents () {
     this.addEventListener("mouseover", this.#startPreview);
     this.addEventListener("mouseout", this.#stopPreview);
-    this.addEventListener("click", this.#handleClick);
   }
 
   #removeEvents () {
     this.removeEventListener("mouseover", this.#startPreview);
     this.removeEventListener("mouseout", this.#stopPreview);
-    this.removeEventListener("click", this.#handleClick);
   }
 
   static get observedAttributes () {

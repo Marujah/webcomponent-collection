@@ -3,11 +3,6 @@ import "./video-preview";
 
 export default {
     title: "Webcomponents/VideoPreview",
-    parameters: {
-      actions: {
-        handles: ['onClick'],
-      },
-    },
     argTypes: {
       previewing: { control: 'boolean' },
     },

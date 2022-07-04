@@ -10,6 +10,7 @@ customElements.define("awesome-rating", class extends HTMLElement {
       return `
         <style>
             meter::-webkit-meter-bar {
+                cursor: pointer;
                 background: transparent;
                 height: calc(${this.size} * 1em);
                 border: none;
@@ -104,15 +105,17 @@ customElements.define("awesome-rating", class extends HTMLElement {
       }
     }
 
-    #handleClick = (e) => this.dispatchEvent(new CustomEvent('onClick', {
-      bubbles: true,
-      composed: true,
-      detail: {
-        width: e.currentTarget.offsetWidth,
-        position: e.offsetX,
-        ratingNumber: Math.ceil(e.offsetX / (e.currentTarget.offsetWidth / this.max)),
-      }
-    }));   
+    #handleClick = (e) => {
+      this.dispatchEvent(new CustomEvent('onRatingclick', {
+        bubbles: true,
+        composed: true,
+        detail: {
+          width: e.currentTarget.offsetWidth,
+          position: e.offsetX,
+          ratingNumber: Math.ceil(e.offsetX / (e.currentTarget.offsetWidth / this.max)),
+        }
+      }));
+    }   
 
     connectedCallback() {
       this.#createCode();
