@@ -1,8 +1,8 @@
 import { convertArgs } from '../utils/args.utils';
-import "./awesome-rating";
+import "./m2-rating";
 
 export default {
-    title: "Webcomponents/AwesomeRating",
+    title: "Webcomponents/Rating",
     parameters: {
       actions: {
         handles: ['onRatingclick'],
@@ -17,7 +17,7 @@ export default {
     }
   };
 
-const Template = (args) => `<awesome-rating ${convertArgs(args)}></awesome-rating>`;
+const Template = (args) => `<m2-rating ${convertArgs(args)}></m2-rating>`;
 
 export const Default = Template.bind({});
 Default.args = {

@@ -1,6 +1,5 @@
-customElements.define("awesome-rating", class extends HTMLElement {
+customElements.define("m2-rating", class extends HTMLElement {
     #shadow = this.attachShadow({ mode: "open" });
-    #props = ["min", "max", "value", "color", "size"];
     
     constructor() {
         super();

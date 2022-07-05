@@ -7,13 +7,13 @@ customElements.define("m2-toggle", class extends HTMLElement {
             --toggle-size: 1;
           }
           .s-small {
-            --toggle-size: 0.5;
+            --toggle-size: 0.75;
           }
           .s-medium {
             --toggle-size: 1;
           }
           .s-large {
-            --toggle-size: 1.5;
+            --toggle-size: 1.25;
           }
           .switch {
               --toggle-width: calc(var(--toggle-size) * 4em);
