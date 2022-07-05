@@ -1,5 +1,5 @@
 import { convertArgs } from '../utils/args.utils';
-import "./qr-code";
+import "./m2-qr-code";
 
 export default {
     title: "Webcomponents/QrCode",
@@ -10,7 +10,7 @@ export default {
     },
   };
 
-const Template = (args) => `<qr-code ${convertArgs(args)}></qr-code>`;
+const Template = (args) => `<m2-qr-code ${convertArgs(args)}></m2-qr-code>`;
 
 export const Default = Template.bind({});
 Default.args = {

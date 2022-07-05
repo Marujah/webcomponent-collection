@@ -2,7 +2,7 @@ import { convertArgs } from '../utils/args.utils';
 import "./m2-toggle";
 
 export default {
-    title: "Webcomponents/M2-Toggle",
+    title: "Webcomponents/Toggle",
     parameters: {
       actions: {
         handles: ['onToggleClick'],
@@ -26,8 +26,8 @@ export default {
 
 const Template = (args) => `<m2-toggle ${convertArgs(args)}></m2-toggle>`;
 
-export const Default = Template.bind({});
-Default.args = {
+export const Medium = Template.bind({});
+Medium.args = {
   leftColor: 'orange',
   rightColor: 'red',
   size: "medium"
@@ -42,7 +42,7 @@ Small.args = {
 
 export const Large = Template.bind({});
 Large.args = {
-  leftColor: 'orange',
-  rightColor: 'red',
+  leftColor: '#078a00',
+  rightColor: '#ffa800',
   size: "large"
 };

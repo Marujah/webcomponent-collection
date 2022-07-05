@@ -1,4 +1,4 @@
-customElements.define("thumbnail-preview", class extends HTMLVideoElement {
+customElements.define("m2-video", class extends HTMLVideoElement {
 
   #startPreview = () => {
     this.volume = 0;
