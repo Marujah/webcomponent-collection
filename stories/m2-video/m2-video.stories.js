@@ -1,12 +1,12 @@
 import { convertArgs } from '../utils/args.utils';
-import "./m2-video";
+import './m2-video';
 
 export default {
-    title: "Webcomponents/Video",
-    argTypes: {
-      previewing: { control: 'boolean' },
-    },
-  };
+  title: 'Webcomponents/Video',
+  argTypes: {
+    previewing: { control: 'boolean' },
+  },
+};
 
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 const Template = (args) => `

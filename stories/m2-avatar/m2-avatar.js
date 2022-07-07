@@ -1,15 +1,17 @@
-customElements.define("m2-avatar", class extends HTMLElement {
-    #shadow = this.attachShadow({ mode : 'open' });
+customElements.define(
+  'm2-avatar',
+  class extends HTMLElement {
+    #shadow = this.attachShadow({ mode: 'open' });
     constructor() {
-        super();
+      super();
     }
 
     get body() {
-        return `<g id="Body" transform="translate(32.000000, 36.000000)"><mask id="react-mask-6" fill="white"><use xlink:href="#react-path-3"></use></mask><use fill="#D0C6AC" xlink:href="#react-path-3"></use><g id="Skin/👶🏽-03-Brown" mask="url(#react-mask-6)" fill="#EDB98A"><g transform="translate(0.000000, 0.000000)" id="Color"><rect x="0" y="0" width="264" height="280"></rect></g></g><path d="M156,79 L156,102 C156,132.927946 130.927946,158 100,158 C69.072054,158 44,132.927946 44,102 L44,79 L44,94 C44,124.927946 69.072054,150 100,150 C130.927946,150 156,124.927946 156,94 L156,79 Z" id="Neck-Shadow" fill-opacity="0.100000001" fill="#000000" mask="url(#react-mask-6)"></path></g>`;
+      return `<g id="Body" transform="translate(32.000000, 36.000000)"><mask id="react-mask-6" fill="white"><use xlink:href="#react-path-3"></use></mask><use fill="#D0C6AC" xlink:href="#react-path-3"></use><g id="Skin/👶🏽-03-Brown" mask="url(#react-mask-6)" fill="#EDB98A"><g transform="translate(0.000000, 0.000000)" id="Color"><rect x="0" y="0" width="264" height="280"></rect></g></g><path d="M156,79 L156,102 C156,132.927946 130.927946,158 100,158 C69.072054,158 44,132.927946 44,102 L44,79 L44,94 C44,124.927946 69.072054,150 100,150 C130.927946,150 156,124.927946 156,94 L156,79 Z" id="Neck-Shadow" fill-opacity="0.100000001" fill="#000000" mask="url(#react-mask-6)"></path></g>`;
     }
 
     get clothing() {
-        return `
+      return `
             <g id="Clothing/Graphic-Shirt" transform="translate(0.000000, 170.000000)">
                 <defs>
                     <path d="M165.624032,29.2681342 C202.760022,32.1373245 232,63.1798426 232,101.051724 L232,110 L32,110 L32,101.051724 C32,62.8348009 61.7752018,31.5722494 99.3929298,29.1967444 C99.1342224,30.2735458 99,31.3767131 99,32.5 C99,44.3741221 113.998461,54 132.5,54 C151.001539,54 166,44.3741221 166,32.5 C166,31.4015235 165.871641,30.3222877 165.624025,29.2681336 Z" id="react-path-7">
@@ -21,15 +23,15 @@ customElements.define("m2-avatar", class extends HTMLElement {
     }
 
     get face() {
-        return `<g id="Face" transform="translate(76.000000, 82.000000)" fill="#000000"><g id="Mouth/Default" transform="translate(2.000000, 52.000000)" fill-opacity="0.699999988"><path d="M40,15 C40,22.7319865 46.2680135,29 54,29 L54,29 C61.7319865,29 68,22.7319865 68,15" id="Mouth"></path></g><g id="Nose/Default" transform="translate(28.000000, 40.000000)" fill-opacity="0.16"><path d="M16,8 C16,12.418278 21.372583,16 28,16 L28,16 C34.627417,16 40,12.418278 40,8" id="Nose"></path></g><g id="Eyes/Default-😀" transform="translate(0.000000, 8.000000)" fill-opacity="0.599999964"><circle id="Eye" cx="30" cy="22" r="6"></circle><circle id="Eye" cx="82" cy="22" r="6"></circle></g><g id="Eyebrow/Outline/Default" fill-opacity="0.599999964"><g id="I-Browse" transform="translate(12.000000, 6.000000)"><path d="M3.63024536,11.1585767 C7.54515501,5.64986673 18.2779197,2.56083721 27.5230268,4.83118046 C28.5957248,5.0946055 29.6788665,4.43856013 29.9422916,3.36586212 C30.2057166,2.2931641 29.5496712,1.21002236 28.4769732,0.94659732 C17.7403633,-1.69001789 5.31209962,1.88699832 0.369754639,8.84142326 C-0.270109626,9.74178291 -0.0589363917,10.9903811 0.84142326,11.6302454 C1.74178291,12.2701096 2.9903811,12.0589364 3.63024536,11.1585767 Z" id="Eyebrow" fill-rule="nonzero"></path><path d="M61.6302454,11.1585767 C65.545155,5.64986673 76.2779197,2.56083721 85.5230268,4.83118046 C86.5957248,5.0946055 87.6788665,4.43856013 87.9422916,3.36586212 C88.2057166,2.2931641 87.5496712,1.21002236 86.4769732,0.94659732 C75.7403633,-1.69001789 63.3120996,1.88699832 58.3697546,8.84142326 C57.7298904,9.74178291 57.9410636,10.9903811 58.8414233,11.6302454 C59.7417829,12.2701096 60.9903811,12.0589364 61.6302454,11.1585767 Z" id="Eyebrow" fill-rule="nonzero" transform="translate(73.000154, 6.039198) scale(-1, 1) translate(-73.000154, -6.039198) "></path></g></g></g>`;
+      return `<g id="Face" transform="translate(76.000000, 82.000000)" fill="#000000"><g id="Mouth/Default" transform="translate(2.000000, 52.000000)" fill-opacity="0.699999988"><path d="M40,15 C40,22.7319865 46.2680135,29 54,29 L54,29 C61.7319865,29 68,22.7319865 68,15" id="Mouth"></path></g><g id="Nose/Default" transform="translate(28.000000, 40.000000)" fill-opacity="0.16"><path d="M16,8 C16,12.418278 21.372583,16 28,16 L28,16 C34.627417,16 40,12.418278 40,8" id="Nose"></path></g><g id="Eyes/Default-😀" transform="translate(0.000000, 8.000000)" fill-opacity="0.599999964"><circle id="Eye" cx="30" cy="22" r="6"></circle><circle id="Eye" cx="82" cy="22" r="6"></circle></g><g id="Eyebrow/Outline/Default" fill-opacity="0.599999964"><g id="I-Browse" transform="translate(12.000000, 6.000000)"><path d="M3.63024536,11.1585767 C7.54515501,5.64986673 18.2779197,2.56083721 27.5230268,4.83118046 C28.5957248,5.0946055 29.6788665,4.43856013 29.9422916,3.36586212 C30.2057166,2.2931641 29.5496712,1.21002236 28.4769732,0.94659732 C17.7403633,-1.69001789 5.31209962,1.88699832 0.369754639,8.84142326 C-0.270109626,9.74178291 -0.0589363917,10.9903811 0.84142326,11.6302454 C1.74178291,12.2701096 2.9903811,12.0589364 3.63024536,11.1585767 Z" id="Eyebrow" fill-rule="nonzero"></path><path d="M61.6302454,11.1585767 C65.545155,5.64986673 76.2779197,2.56083721 85.5230268,4.83118046 C86.5957248,5.0946055 87.6788665,4.43856013 87.9422916,3.36586212 C88.2057166,2.2931641 87.5496712,1.21002236 86.4769732,0.94659732 C75.7403633,-1.69001789 63.3120996,1.88699832 58.3697546,8.84142326 C57.7298904,9.74178291 57.9410636,10.9903811 58.8414233,11.6302454 C59.7417829,12.2701096 60.9903811,12.0589364 61.6302454,11.1585767 Z" id="Eyebrow" fill-rule="nonzero" transform="translate(73.000154, 6.039198) scale(-1, 1) translate(-73.000154, -6.039198) "></path></g></g></g>`;
     }
 
     get top() {
-        return `<g id="Top" stroke-width="1" fill-rule="evenodd"><defs><rect id="react-path-13" x="0" y="0" width="264" height="280"></rect><path d="M90.9102919,55.3613196 L175.085702,55.3613196 C193.333279,44.8338001 196.759397,26.1510357 183.849606,9.92600089 C180.635746,5.88682054 175.085702,21.6755614 158.028596,22.6504878 C140.97149,23.6254143 142.608865,16.3498661 124.45759,19.0739248 C106.306316,21.7979835 108.311575,36.37843 96.4671989,39.8768239 C88.5709482,42.2090865 86.7186458,47.370585 90.9102919,55.3613196 Z" id="react-path-12"></path><filter x="-0.8%" y="-2.0%" width="101.5%" height="108.0%" filterUnits="objectBoundingBox" id="react-filter-9"><feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix><feMerge><feMergeNode in="shadowMatrixOuter1"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter></defs><mask id="react-mask-11" fill="white"><use xlink:href="#react-path-13"></use></mask><g id="Mask"></g><g id="Top/Short-Hair/Frizzle" mask="url(#react-mask-11)"><g transform="translate(-1.000000, 0.000000)"><mask id="react-mask-10" fill="white"><use xlink:href="#react-path-12"></use></mask><use id="Hair-Maks" stroke="none" fill="#252E32" fill-rule="evenodd" xlink:href="#react-path-12"></use><g id="Skin/👶🏽-03-Brown" mask="url(#react-mask-10)" fill="#B58143"><g transform="translate(0.000000, 0.000000) " id="Color"><rect x="0" y="0" width="264" height="280"></rect></g></g></g></g></g>`;
+      return `<g id="Top" stroke-width="1" fill-rule="evenodd"><defs><rect id="react-path-13" x="0" y="0" width="264" height="280"></rect><path d="M90.9102919,55.3613196 L175.085702,55.3613196 C193.333279,44.8338001 196.759397,26.1510357 183.849606,9.92600089 C180.635746,5.88682054 175.085702,21.6755614 158.028596,22.6504878 C140.97149,23.6254143 142.608865,16.3498661 124.45759,19.0739248 C106.306316,21.7979835 108.311575,36.37843 96.4671989,39.8768239 C88.5709482,42.2090865 86.7186458,47.370585 90.9102919,55.3613196 Z" id="react-path-12"></path><filter x="-0.8%" y="-2.0%" width="101.5%" height="108.0%" filterUnits="objectBoundingBox" id="react-filter-9"><feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix><feMerge><feMergeNode in="shadowMatrixOuter1"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter></defs><mask id="react-mask-11" fill="white"><use xlink:href="#react-path-13"></use></mask><g id="Mask"></g><g id="Top/Short-Hair/Frizzle" mask="url(#react-mask-11)"><g transform="translate(-1.000000, 0.000000)"><mask id="react-mask-10" fill="white"><use xlink:href="#react-path-12"></use></mask><use id="Hair-Maks" stroke="none" fill="#252E32" fill-rule="evenodd" xlink:href="#react-path-12"></use><g id="Skin/👶🏽-03-Brown" mask="url(#react-mask-10)" fill="#B58143"><g transform="translate(0.000000, 0.000000) " id="Color"><rect x="0" y="0" width="264" height="280"></rect></g></g></g></g></g>`;
     }
 
     #createContent() {
-        this.#shadow.innerHTML = `
+      this.#shadow.innerHTML = `
             <svg width="246px" height="280px" viewBox="0 0 264 280" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <defs>
                     <circle id="react-path-1" cx="120" cy="120" r="120"></circle>
@@ -42,17 +44,17 @@ customElements.define("m2-avatar", class extends HTMLElement {
     }
 
     get observedAttributes() {
-        return ['me'];
+      return ['me'];
     }
 
-    attributeChangedCallback (name, oldValue, newValue) {
-        if (name === 'me') {
-            this.#createContent();
-        }
+    attributeChangedCallback(name) {
+      if (name === 'me') {
+        this.#createContent();
+      }
     }
 
     connectedCallback() {
-        this.#createContent();
+      this.#createContent();
     }
-
-})
+  }
+);
