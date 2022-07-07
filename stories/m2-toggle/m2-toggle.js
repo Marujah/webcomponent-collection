@@ -1,7 +1,15 @@
-customElements.define("m2-toggle", class extends HTMLElement {
-  #shadow = this.attachShadow({ mode: "open" });
-  get style() {
-    return `
+customElements.define(
+  'm2-toggle',
+  class extends HTMLElement {
+    #shadow = this.attachShadow({ mode: 'open' });
+
+    // constructor() {
+    //   super();
+    //   this.#event();
+    // }
+
+    get style() {
+      return `
       <style>
           :host {
             --toggle-size: 1;
@@ -64,90 +72,93 @@ customElements.define("m2-toggle", class extends HTMLElement {
           }					
       </style>
     `;
-  }
+    }
 
-  get template() {
-    return `
+    get template() {
+      return `
         <label class="switch s-${this.size}">
             <input type="checkbox">
             <div class="slider round"></div>
         </label>
     `;
-  }
-
-  #handleClick(event) {
-    if(event.path[0].tagName === 'INPUT') {
-      this.dispatchEvent(new CustomEvent('onToggleClick', {
-          bubbles: true,
-          composed: true,
-          detail: {
-            checked: event.path[0].checked,
-          }
-      }));
     }
-  }
 
-  #addEvents() {
-    this.addEventListener("click", this.#handleClick);
-  }
-
-  #removeEvents() {
-    this.removeEventListener("click", this.#handleClick);
-  }
-
-  #createCode() {
-    this.#shadow.innerHTML = `${this.style} ${this.template}`;
-  }
-
-  get leftColor() {
-    return this.getAttribute('leftColor');
-  }
-  set leftColor(newColor) {
-    if (!newColor) {
-      newColor = 'green';
-    }
-    this.setAttribute('leftColor', newColor);
-  }
-
-  get rightColor() {
-    return this.getAttribute('rightColor');
-  }
-  set rightColor(newColor) {
-    if (!newColor) {
-      newColor = 'red';
-    }
-    this.setAttribute('rightColor', newColor);
-  }
-
-  get size() {
-    return this.getAttribute('size');
-  }
-  set size(newSize) {
-    if (!newSize || ['small', 'medium', 'large'].includes(newSize)) {
-      newSize = 'medium';
-    }
-    this.setAttribute('size', newSize);
-  }
-
-  static get observedAttributes() {
-    return ["color"];
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (name === "color" || name === "size") {
-      if (newValue !== oldValue) {
-        this.#createCode();
+    #handleClick(event) {
+      const target = event.composedPath()?.[0];
+      if (target.nodeName === 'INPUT') {
+        this.dispatchEvent(
+          new CustomEvent('onToggleClick', {
+            bubbles: true,
+            composed: true,
+            detail: {
+              checked: target.checked,
+            },
+          })
+        );
       }
     }
-  }
 
-  connectedCallback() {
-    this.#createCode();
-    this.#addEvents();
-  }
+    #addEvents() {
+      this.addEventListener('click', this.#handleClick, { bubble: false });
+    }
 
-  disconnectedCallback() {
-    this.#removeEvents();
-  }
+    #removeEvents() {
+      this.removeEventListener('click', this.#handleClick);
+    }
 
-});
+    #createCode() {
+      this.#shadow.innerHTML = `${this.style} ${this.template}`;
+    }
+
+    get leftColor() {
+      return this.getAttribute('leftColor');
+    }
+    set leftColor(newColor) {
+      if (!newColor) {
+        newColor = 'green';
+      }
+      this.setAttribute('leftColor', newColor);
+    }
+
+    get rightColor() {
+      return this.getAttribute('rightColor');
+    }
+    set rightColor(newColor) {
+      if (!newColor) {
+        newColor = 'red';
+      }
+      this.setAttribute('rightColor', newColor);
+    }
+
+    get size() {
+      return this.getAttribute('size');
+    }
+    set size(newSize) {
+      if (!newSize || ['small', 'medium', 'large'].includes(newSize)) {
+        newSize = 'medium';
+      }
+      this.setAttribute('size', newSize);
+    }
+
+    static get observedAttributes() {
+      return ['color'];
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+      if (name === 'color' || name === 'size') {
+        if (newValue !== oldValue) {
+          this.#createCode();
+        }
+      }
+    }
+
+    connectedCallback() {
+      this.#createCode();
+      this.#addEvents();
+    }
+
+    disconnectedCallback() {
+      this.#removeEvents();
+    }
+  }
+);

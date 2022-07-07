@@ -1,21 +1,21 @@
 import { convertArgs } from '../utils/args.utils';
-import "./m2-rating";
+import './m2-rating';
 
 export default {
-    title: "Webcomponents/Rating",
-    parameters: {
-      actions: {
-        handles: ['onRatingclick'],
-      },
+  title: 'Webcomponents/Rating',
+  parameters: {
+    actions: {
+      handles: ['onRatingclick'],
     },
-    argTypes: {
-      min: Number,
-      max: Number,
-      size: Number,
-      value: Number,
-      color: String,
-    }
-  };
+  },
+  argTypes: {
+    min: Number,
+    max: Number,
+    size: Number,
+    value: Number,
+    color: String,
+  },
+};
 
 const Template = (args) => `<m2-rating ${convertArgs(args)}></m2-rating>`;
 
