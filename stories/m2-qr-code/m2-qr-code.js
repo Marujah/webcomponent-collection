@@ -1164,7 +1164,6 @@ customElements.define(
     attributeChangedCallback(name) {
       if (name === 'width' || name === 'height' || name === 'href') {
         if (this.#qrCode) {
-          // nicht initial, connectedCallback() übernimmt
           this.#createCode();
         }
       }
