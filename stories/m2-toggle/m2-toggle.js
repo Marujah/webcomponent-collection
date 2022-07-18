@@ -141,7 +141,7 @@ customElements.define(
     }
 
     static get observedAttributes() {
-      return ['color'];
+      return ['color', 'size'];
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
